@@ -30,7 +30,3 @@ Matrix Calculator adalah program sederhana yang memungkinkan pengguna untuk mela
 4. Masukkan elemen-elemen matriks A sesuai dengan ukuran yang dipilih.
 5. Jika operasi yang dipilih adalah penjumlahan, pengurangan, atau perkalian, masukkan elemen-elemen matriks B.
 6. Program akan menampilkan hasil dari operasi yang dipilih.
-
-## Contoh Penggunaan
-
-1. **Menjumlahkan Dua Matriks 2x2**:
