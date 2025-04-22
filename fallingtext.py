@@ -5,21 +5,30 @@ import os
 
 os.system('clear')
 
-text = 'hello world'
-text = text.upper()
-huruf = string.ascii_uppercase + string.whitespace + ','
-huruf_acak = string.ascii_uppercase
+text = 'HELLO, WORLD'
+huruf_valid = string.ascii_uppercase + ' ,' + '!' + '?'
+huruf_acak = string.ascii_uppercase + ' '
 temp = ''
 
 for char in text:
-    for i in huruf:
-        random_chars = ''.join(random.choice(huruf_acak) for _ in range(len(text) - len(temp) - 1))
-        
+    for i in huruf_valid:
+        if i not in huruf_valid:
+            continue
+
+        sisa_panjang = len(text) - len(temp) - 1
+        random_chars = ''.join(random.choice(huruf_acak) for _ in range(sisa_panjang))
+
         output = temp + i + random_chars
-        
-        print(output)
-        time.sleep(0.05)
-        
+
+        padded_output = output.ljust(len(text))
+
+        print(padded_output)
+        time.sleep(0.025)
+
         if i == char:
             temp += char
             break
+
+for i in range(5):
+    print(text)
+    time.sleep(0.025)
