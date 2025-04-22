@@ -33,7 +33,7 @@ Matrix Calculator adalah program sederhana yang memungkinkan pengguna untuk mela
 
 # Falling Text
 
-# Penjelasan Kode Animasi Teks: "HELLO, WORLD"
+## Penjelasan Kode Animasi Teks: "HELLO, WORLD"
 
 Kode ini membuat animasi teks di terminal, di mana huruf-huruf dari kalimat **"HELLO, WORLD"** muncul satu per satu dari atas ke bawah, seperti sedang jatuh. Setiap huruf dicoba satu per satu secara acak sampai cocok, lalu lanjut ke huruf berikutnya.
 
