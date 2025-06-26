@@ -41,5 +41,3 @@ def faktorial(n:int):
 pangkat = lambda n, m : n**m
 
 modulus = lambda n, m: n%m
-
-print(kurang(100,2,3,4,5))
