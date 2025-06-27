@@ -13,11 +13,16 @@ def konversi_suhu(titik_tetap_atas_Tx, titik_tetap_bawahTx, titik_tetap_atas_Ty,
 
 
 def main():
-    print("="*15 + "Temperature Converter" + "="*15)
-    print(" Pilih jenis konversi ")
-
-    jenis_konversi = int(input("1. Celcius to Reamur \n2. Celcius to Fahrenheit \n3. Celcius to Kelvin \n4. Reamur to Celcius \n5. Reamur to Fahrenheit \n6. Reamur to Kelvin \n7. Kelvin to Celcius \n8. Kelvin to Reamur \n9. Kelvin to Fahrenheit \n10. Fahrenheit to Celcius \n11. Fahrenheit to Reamur \n12. Fahrenheit to Kelvin \n"))
-
+    print("="*20 + " TEMPERATURE CONVERTER " + "="*20)
+    print("\nPILIH JENIS KONVERSI:")
+    print(" 1. Celcius ke Reamur      7. Kelvin ke Celcius")
+    print(" 2. Celcius ke Fahrenheit  8. Kelvin ke Reamur")
+    print(" 3. Celcius ke Kelvin      9. Kelvin ke Fahrenheit")
+    print(" 4. Reamur ke Celcius     10. Fahrenheit ke Celcius")
+    print(" 5. Reamur ke Fahrenheit  11. Fahrenheit ke Reamur")
+    print(" 6. Reamur ke Kelvin      12. Fahrenheit ke Kelvin")
+    print("\n" + "="*50)
+    
     suhu = int(input("Masukan suhu yang akan dikonversi (hanya angka): "))
     titik_tetap_atas_celcius = 100
     titik_tetap_bawah_celcius = 0
