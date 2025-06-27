@@ -1,8 +1,11 @@
-import math_module as  mtk
-import matrix as mtx
+# import math_module as  mtk
+# import matrix as mtx
+
+from calculation import mtk, mtx, fisika
+
 print("="*15 + " Selamat datang di kalkulator operasi perhitungan dasar matematika " + "="*15 + "\n")
 print("Silahkan pilih operasi yang di inginkan: ")
-operasi = int(input("1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian\n5. Pangkat\n6. Faktorial\n7. Modulus\n8. Operasi Matrix\n"))
+operasi = int(input("1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian\n5. Pangkat\n6. Faktorial\n7. Modulus\n8. Operasi Matrix\n9. Konversi satuan suhu\n"))
 
 if operasi == 1:
     print("="*7 + " Penjumlahan" + "="*7)
@@ -41,3 +44,6 @@ elif operasi == 7:
 
 elif operasi == 8:
     mtx.main()
+
+elif operasi == 9:
+    fisika.main()
