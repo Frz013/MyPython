@@ -22,7 +22,8 @@ def main():
     print(" 5. Reamur ke Fahrenheit  11. Fahrenheit ke Reamur")
     print(" 6. Reamur ke Kelvin      12. Fahrenheit ke Kelvin")
     print("\n" + "="*50)
-    
+
+    jenis_konversi = int(input(""))
     suhu = int(input("Masukan suhu yang akan dikonversi (hanya angka): "))
     titik_tetap_atas_celcius = 100
     titik_tetap_bawah_celcius = 0
