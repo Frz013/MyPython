@@ -11,8 +11,8 @@ def konversi_suhu(titik_tetap_atas_Tx, titik_tetap_bawahTx, titik_tetap_atas_Ty,
     
     return suhu_hasil
 
-
-def main():
+def tampilkan_menu():
+    """Menampilkan menu pilihan konversi suhu"""
     print("="*20 + " TEMPERATURE CONVERTER " + "="*20)
     print("\nPILIH JENIS KONVERSI:")
     print(" 1. Celcius ke Reamur      7. Kelvin ke Celcius")
@@ -23,79 +23,57 @@ def main():
     print(" 6. Reamur ke Kelvin      12. Fahrenheit ke Kelvin")
     print("\n" + "="*50)
 
-    jenis_konversi = int(input(""))
-    suhu = int(input("Masukan suhu yang akan dikonversi (hanya angka): "))
-    titik_tetap_atas_celcius = 100
-    titik_tetap_bawah_celcius = 0
 
-    titik_tetap_atas_reamur = 80
-    titik_tetap_bawah_reamur = 0
+def main():
 
-    titik_tetap_atas_fahrenheit = 212
-    titik_tetap_bawah_fahrenheit = 32
+    TITIK_DIDIH_C = 100
+    TITIK_BEKU_C = 0
+    
+    TITIK_DIDIH_R = 80
+    TITIK_BEKU_R = 0
+    
+    TITIK_DIDIH_F = 212
+    TITIK_BEKU_F = 32
+    
+    TITIK_DIDIH_K = 373
+    TITIK_BEKU_K = 273
 
-    titik_tetap_atas_kelvin = 373
-    titik_tetap_bawah_kelvin = 273
+    # Mapping konversi
+    KONVERSI = {
+        1: ("Celcius ke Reamur", TITIK_DIDIH_C, TITIK_BEKU_C, TITIK_DIDIH_R, TITIK_BEKU_R),
+        2: ("Celcius ke Fahrenheit", TITIK_DIDIH_C, TITIK_BEKU_C, TITIK_DIDIH_F, TITIK_BEKU_F),
+        3: ("Celcius ke Kelvin", TITIK_DIDIH_C, TITIK_BEKU_C, TITIK_DIDIH_K, TITIK_BEKU_K),
+        4: ("Reamur ke Celcius", TITIK_DIDIH_R, TITIK_BEKU_R, TITIK_DIDIH_C, TITIK_BEKU_C),
+        5: ("Reamur ke Fahrenheit", TITIK_DIDIH_R, TITIK_BEKU_R, TITIK_DIDIH_F, TITIK_BEKU_F),
+        6: ("Reamur ke Kelvin", TITIK_DIDIH_R, TITIK_BEKU_R, TITIK_DIDIH_K, TITIK_BEKU_K),
+        7: ("Kelvin ke Celcius", TITIK_DIDIH_K, TITIK_BEKU_K, TITIK_DIDIH_C, TITIK_BEKU_C),
+        8: ("Kelvin ke Reamur", TITIK_DIDIH_K, TITIK_BEKU_K, TITIK_DIDIH_R, TITIK_BEKU_R),
+        9: ("Kelvin ke Fahrenheit", TITIK_DIDIH_K, TITIK_BEKU_K, TITIK_DIDIH_F, TITIK_BEKU_F),
+        10: ("Fahrenheit ke Celcius", TITIK_DIDIH_F, TITIK_BEKU_F, TITIK_DIDIH_C, TITIK_BEKU_C),
+        11: ("Fahrenheit ke Reamur", TITIK_DIDIH_F, TITIK_BEKU_F, TITIK_DIDIH_R, TITIK_BEKU_R),
+        12: ("Fahrenheit ke Kelvin", TITIK_DIDIH_F, TITIK_BEKU_F, TITIK_DIDIH_K, TITIK_BEKU_K)
+    }
 
-    if jenis_konversi == 1:
-        jenis_konverter = "Celcius to Reamur"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_celcius, titik_tetap_bawah_celcius, titik_tetap_atas_reamur, titik_tetap_bawah_reamur, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 2:
-        jenis_konverter = "Celcius to Fahrenheit"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_celcius, titik_tetap_bawah_celcius, titik_tetap_atas_fahrenheit, titik_tetap_bawah_fahrenheit, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 3:
-        jenis_konverter = "Celcius to Kelvin"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_celcius, titik_tetap_bawah_celcius, titik_tetap_atas_kelvin, titik_tetap_bawah_kelvin, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 4:
-        jenis_konverter = "Reamur to Celcius"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_reamur, titik_tetap_bawah_reamur, titik_tetap_atas_celcius, titik_tetap_bawah_celcius, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
+    tampilkan_menu()
+    
+    try:
+        pilihan = int(input("\nMasukkan pilihan (1-12): "))
+        suhu = float(input("Masukkan suhu yang akan dikonversi: "))
         
-    elif jenis_konversi == 5:
-        jenis_konverter = "Reamur to Fahrenheit"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_reamur, titik_tetap_bawah_reamur, titik_tetap_atas_fahrenheit, titik_tetap_bawah_fahrenheit, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 6:
-        jenis_konverter = "Reamur to Kelvin"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_reamur, titik_tetap_bawah_reamur, titik_tetap_atas_kelvin, titik_tetap_bawah_kelvin, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 7:
-        jenis_konverter = "Kelvin to Celcius"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_kelvin, titik_tetap_bawah_kelvin, titik_tetap_atas_celcius, titik_tetap_bawah_celcius, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 8:
-        jenis_konverter = "Kelvin to Reamur"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_kelvin, titik_tetap_bawah_kelvin, titik_tetap_atas_reamur, titik_tetap_bawah_reamur, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 9:
-        jenis_konverter = "Kelvin to Fahrenheit"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_kelvin, titik_tetap_bawah_kelvin, titik_tetap_atas_fahrenheit, titik_tetap_bawah_fahrenheit, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 10:
-        jenis_konverter = "Fahrenheit to Celcius"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_fahrenheit, titik_tetap_bawah_fahrenheit, titik_tetap_atas_celcius, titik_tetap_bawah_celcius, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 11:
-        jenis_konverter = "Fahrenheit to Reamur"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_fahrenheit, titik_tetap_bawah_fahrenheit, titik_tetap_atas_reamur, titik_tetap_bawah_reamur, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
-
-    elif jenis_konversi == 12:
-        jenis_konverter = "Fahrenheit to Kelvin"
-        hasil_konversi = konversi_suhu(titik_tetap_atas_fahrenheit, titik_tetap_bawah_fahrenheit, titik_tetap_atas_kelvin, titik_tetap_bawah_kelvin, suhu)
-        print(f"Hasil konversi {jenis_konverter} adalah {hasil_konversi}")
+        if pilihan not in KONVERSI:
+            print("Pilihan tidak valid! Harap masukkan angka 1-12.")
+            return
+            
+        jenis, tx_atas, tx_bawah, ty_atas, ty_bawah = KONVERSI[pilihan]
+        hasil = konversi_suhu(tx_atas, tx_bawah, ty_atas, ty_bawah, suhu)
+        
+        print(f"\nHasil konversi {jenis}:")
+        print(f"{suhu}° → {hasil:.2f}°")
+        
+    except ValueError:
+        print("Input tidak valid! Harap masukkan angka.")
+    except ZeroDivisionError:
+        print("Error: Pembagian dengan nol terjadi. Pastikan input valid.")
 
 
 
