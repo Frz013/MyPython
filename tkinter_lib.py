@@ -30,11 +30,16 @@ def hitung():
 
     label_hasil.config(text=f"Hasil: {hasil}") 
 
-
+operasi = tk.Listbox(bottom_frame, )
+operasi.grid(row=3, column=1)
+operasi.insert(1, "Penjumlahan")
+operasi.insert(2, "Pengurangan")
+operasi.insert(3, "Perkalian")
+operasi.insert(4, "Pembagian")
 
 button = tk.Button(bottom_frame, text='Hitung', width=25, command = hitung)
 button.grid(row=2, column=1, pady=10)
 
 label_hasil = tk.Label(bottom_frame, text = f" Hasil: ")
-label_hasil.grid(row=3, column=1)
+label_hasil.grid(row=4, column=1)
 window.mainloop()
