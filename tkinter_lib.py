@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from tkinter import ttk
 
 
 window = tk.Tk()
@@ -22,23 +22,48 @@ input2 = tk.Entry(bottom_frame)
 input1.grid(row=0, column=1, pady=5)
 input2.grid(row=1, column=1, pady=5)
 
-def hitung():
+
+
+def operasi_hitung(event="none"):
+
     value1 = float(input1.get())
     value2 = float(input2.get())
 
-    hasil = value1  + value2
+    if not value1 or not value2:
+        label_hasil.config(text="Error: Input tidak boleh kosong!")
+        return
 
-    label_hasil.config(text=f"Hasil: {hasil}") 
 
-operasi = tk.Listbox(bottom_frame, )
-operasi.grid(row=3, column=1)
-operasi.insert(1, "Penjumlahan")
-operasi.insert(2, "Pengurangan")
-operasi.insert(3, "Perkalian")
-operasi.insert(4, "Pembagian")
 
-button = tk.Button(bottom_frame, text='Hitung', width=25, command = hitung)
-button.grid(row=2, column=1, pady=10)
+    operasi_terpilih = operasi.get()
+    if operasi_terpilih == "Penjumlahan":
+        hasil = value1 + value2
+    elif operasi_terpilih == "Pengurangan":
+        hasil = value1 - value2
+    elif operasi_terpilih == "Perkalian":
+        hasil = value1 * value2
+    elif operasi_terpilih == "Pembagian":
+        hasil = value1 / value2 if value2 != 0 else "Tidak bisa dibagi dengan nol"
+    else: hasil = "Pilih Operasi terlebih dahulu"
+    
+    label_hasil.config(text="Hasil: " + str(hasil))
+
+    jenis_operasi.config(text="Jenis Operasi: " + operasi_terpilih)
+
+
+    
+
+
+operasi = ttk.Combobox(bottom_frame, state="readonly", value=["Penjumlahan", "Pengurangan", "Perkalian", "Pembagian"])
+operasi.grid(row=2, column=1)
+operasi.set("Pilihan Operasi")
+operasi.bind("<<ComboboxSelected>>",)
+
+jenis_operasi = tk.Label(bottom_frame, text="Jenis Operasi: ")
+
+
+button = tk.Button(bottom_frame, text='Hitung', width=25, command = operasi_hitung)
+button.grid(row=3, column=1, pady=10)
 
 label_hasil = tk.Label(bottom_frame, text = f" Hasil: ")
 label_hasil.grid(row=4, column=1)
