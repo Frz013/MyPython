@@ -18,17 +18,15 @@ def main():
     bottom_frame = tk.Frame(main_window, bg=FRAME_COLOR, bd=1, relief="ridge")
     bottom_frame.pack(pady=10, padx=10, fill="both", expand=True)
 
-    judul1 = tk.Label(top_frame, text=" Matrix Kalkulator", font=("Helvetica", 22, "bold"))
+    judul1 = tk.Label(top_frame, text=" Menu", font=("Helvetica", 22, "bold"))
     judul1.pack(side="top", padx=15, pady= 10)
 
-    judul2 = tk.Label(bottom_frame, text="Masukan nilai Matrix: ")
-    judul2.grid(row=1, column=1, padx=10, pady=10)
 
-    input1 = tk.Entry(bottom_frame, width=25, bg="white", fg="black", relief="flat", highlightthickness=1, highlightbackground="#90caf9")
-    input1.grid(row=1,column=2, padx=10, pady=10)
+    judul2 = tk.Label(bottom_frame, text="Pilih jenis Kalkulator", bg=FRAME_COLOR)
+    judul2.grid(row=0, column=0, padx=15, pady=10)
 
-    tombol_hitung = tk.Button(bottom_frame,text="HItung")
-    tombol_hitung.grid(row=2, column=2, padx=10, pady=10)
+    tombol1 = tk.Button(bottom_frame, text="Normal Kalkulator")
+    tombol1.grid(row=1, column=0, pady=5)
 
 
 
@@ -85,7 +83,7 @@ def normal_kalkulator():
             hasil = "Pilih Operasi terlebih dahulu"
 
         label_hasil.config(text="Hasil: " + str(hasil))
-        jenis_operasi.config(text="Jenis Operasi: " + operasi_terpilih)
+
 
     operasi = ttk.Combobox(bottom_frame, state="readonly", value=["Penjumlahan", "Pengurangan", "Perkalian", "Pembagian"])
     operasi.grid(row=2, column=1, padx=10, pady=10)
