@@ -1,5 +1,4 @@
-# import math_module as  mtk
-# import matrix as mtx
+
 
 from calculation import mtk, mtx, fisika
 

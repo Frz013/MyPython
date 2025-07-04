@@ -65,3 +65,4 @@ Untuk setiap huruf dalam `text`, program:
 ### 5. Tampilan di Terminal
 Hasil setiap percobaan ditampilkan di baris baru. Dengan begitu, kamu bisa melihat huruf-huruf terbentuk perlahan dari atas ke bawah, menciptakan efek animasi seperti "jatuh".
 
+### ### ####
