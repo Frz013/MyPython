@@ -1,68 +1,134 @@
+# MyPython Project
+Ini adalah kumpulan program python yang saya buat untuk belajar dan berlatih.
+
+
+Kumpulan program Python sederhana yang bisa dipakai untuk banyak hal, mulai dari kalkulator, ngatur data, animasi di terminal, sampai bikin tampilan grafis (GUI). Cocok banget buat kamu yang lagi belajar dasar-dasar pemrograman Python, matematika, fisika, dan juga penggunaan library keren kayak Tkinter, Pygame, dan NumPy.
+
+---
+
+## Daftar Isi
+
+- [Matrix Calculator](#matrix-calculator)
+- [Falling Text](#falling-text)
+- [Penjelasan Tiap File](#penjelasan-tiap-file)
+- [Cara Menjalankan](#cara-menjalankan)
+- [Kebutuhan Sistem & Library](#kebutuhan-sistem--library)
+
+---
+
 # Matrix Calculator
 
-Matrix Calculator adalah program sederhana yang memungkinkan pengguna untuk melakukan berbagai operasi pada matriks, termasuk penjumlahan, pengurangan, perkalian, transpose, determinan, dan invers. Program ini menggunakan library NumPy untuk memudahkan manipulasi matriks.
+Matrix Calculator ini program sederhana yang bisa bantu kamu ngerjain operasi-operasi dasar pada matriks. Misalnya nambah, kurang, kali, transpose, nyari determinan, sampai invers. Semuanya dibantu pakai library NumPy biar gampang.
 
 ## Fitur
 
-1. **Pemilihan Jenis Matriks**:
-   - Pengguna dapat memilih antara matriks 2x2 atau 3x3.
+1. **Pilih Ukuran Matriks**:
+   - Bisa pilih matriks 2x2 atau 3x3.
 
-2. **Operasi Matriks**:
-   - Pengguna dapat memilih salah satu dari enam operasi berikut:
-     - Penjumlahan
-     - Pengurangan
-     - Perkalian
-     - Transpose
-     - Determinan
-     - Invers
+2. **Operasi yang Bisa Dilakukan**:
+   - Penjumlahan
+   - Pengurangan
+   - Perkalian
+   - Transpose
+   - Determinan
+   - Invers
 
-3. **Input Matriks**:
-   - Pengguna diminta untuk memasukkan elemen-elemen matriks A dan, jika diperlukan, matriks B.
+3. **Input Data**:
+   - Kamu bakal diminta masukin elemen-elemen matriks A (dan B kalau perlu).
 
-4. **Output Hasil**:
-   - Program akan menampilkan matriks A, matriks B (jika ada), dan hasil dari operasi yang dipilih.
+4. **Output**:
+   - Program bakal nampilin matriks A, B (kalau ada), dan hasil operasinya.
 
-## Cara Menggunakan
+## Cara Pakai
 
-1. Jalankan program.
-2. Pilih jenis matriks yang ingin digunakan (2x2 atau 3x3).
-3. Pilih operasi yang ingin dilakukan (1-6).
-4. Masukkan elemen-elemen matriks A sesuai dengan ukuran yang dipilih.
-5. Jika operasi yang dipilih adalah penjumlahan, pengurangan, atau perkalian, masukkan elemen-elemen matriks B.
-6. Program akan menampilkan hasil dari operasi yang dipilih.
+1. Jalankan programnya.
+2. Pilih ukuran matriks (2x2 atau 3x3).
+3. Pilih jenis operasi (dari 1 sampai 6).
+4. Masukkan elemen-elemen matriks A.
+5. Kalau operasinya perlu dua matriks (kayak tambah, kurang, kali), masukin juga matriks B.
+6. Lihat hasilnya di layar.
+
+---
 
 # Falling Text
 
-## Penjelasan Kode Animasi Teks: "HELLO, WORLD"
+## Apa Itu Falling Text?
 
-Kode ini membuat animasi teks di terminal, di mana huruf-huruf dari kalimat **"HELLO, WORLD"** muncul satu per satu dari atas ke bawah, seperti sedang jatuh. Setiap huruf dicoba satu per satu secara acak sampai cocok, lalu lanjut ke huruf berikutnya.
+Ini adalah animasi teks di terminal. Jadi kalimat **"HELLO, WORLD"** muncul satu-satu hurufnya dari atas ke bawah, kayak jatuh gitu. Setiap huruf ditebak acak sampai cocok, baru lanjut ke huruf berikutnya.
 
-## Apa yang Dilakukan Kodenya?
+### Penjelasan
 
-### 1. Import Library
-Program menggunakan beberapa pustaka Python:
-- `string`: untuk mendapatkan daftar huruf alfabet.
-- `random`: untuk memilih huruf secara acak.
-- `time`: untuk memberi jeda (delay) agar terlihat seperti animasi.
-- `os`: untuk membersihkan layar terminal sebelum memulai.
+1. **Import Library**:
+   - `string`: buat dapetin daftar huruf.
+   - `random`: buat milih huruf acak.
+   - `time`: buat kasih jeda biar animasinya keliatan.
+   - `os`: buat ngebersihin layar terminal.
 
-### 2. Bersihkan Layar Terminal
-Sebelum animasi dimulai, layar terminal dibersihkan agar tampilannya bersih.
+2. **Bersihin Layar**:
+   - Supaya animasinya keliatan rapi.
 
-### 3. Tentukan Huruf yang Akan Ditampilkan
-Program menyiapkan:
-- `text`: kalimat yang akan dianimasikan, yaitu `"HELLO, WORLD"`.
-- `huruf_valid`: semua karakter yang mungkin digunakan (huruf besar, spasi, dan koma).
-- `huruf_acak`: karakter yang dipakai untuk efek acakan.
-- `temp`: untuk menyimpan huruf yang sudah berhasil ditemukan.
+3. **Set Kalimat yang Ditampilkan**:
+   - Kalimat yang mau ditampilkan: "HELLO, WORLD".
+   - Disiapin juga daftar huruf-huruf valid dan acak buat animasinya.
 
-### 4. Proses Animasi
-Untuk setiap huruf dalam `text`, program:
-- Mencoba berbagai karakter hingga menemukan huruf yang sesuai.
-- Menampilkan hasil percobaan di terminal, satu baris untuk setiap percobaan.
-- Menambahkan huruf tersebut ke `temp` setelah cocok, lalu lanjut ke huruf berikutnya.
+4. **Proses Animasinya**:
+   - Setiap huruf ditebak satu-satu secara acak sampai ketemu yang benar.
+   - Tiap percobaan ditampilkan satu baris di terminal.
+   - Huruf yang udah cocok ditambahin ke hasil.
 
-### 5. Tampilan di Terminal
-Hasil setiap percobaan ditampilkan di baris baru. Dengan begitu, kamu bisa melihat huruf-huruf terbentuk perlahan dari atas ke bawah, menciptakan efek animasi seperti "jatuh".
+5. **Tampilan di Terminal**:
+   - Huruf-huruf muncul satu-satu dari atas ke bawah, kelihatan kayak efek jatuh.
 
-### ### ####
+---
+
+# Penjelasan Tiap File
+
+Berikut fungsi masing-masing file Python:
+
+## 1. `math_module.py`
+- Operasi matematika: tambah, kurang, kali, bagi.
+- Fungsi faktorial (rekursif).
+- Fungsi pangkat dan modulus pakai lambda.
+
+## 2. `dictionary.py`
+- Input data mahasiswa: nama, NIM, SKS, tanggal lahir.
+- Data disimpan dalam dictionary dengan key acak.
+- Output dalam bentuk tabel.
+
+## 3. `trianggle.py`
+- Nampilin pola segitiga bintang:
+  - Segitiga naik, turun, piramida, dan piramida terbalik.
+- Jumlah baris ditentukan user.
+
+## 4. `datetime_lib.py`
+- Tampilkan tanggal dan waktu sekarang.
+- Jam diupdate tiap detik di terminal.
+
+## 5. `pygame_lib.py`
+- Contoh pakai Pygame.
+- Bikin jendela grafis 500x500 piksel.
+- Kotak biru bisa digerakin pakai tombol panah.
+
+## 6. `tkinter_lib.py`
+- GUI sederhana pakai Tkinter.
+- Ada tombol buat buka kalkulator.
+- Kalkulator bisa tambah, kurang, kali, dan bagi.
+
+## 7. `import.py`
+- Program utama.
+- Menyediakan menu untuk kalkulasi umum, matriks, dan konversi suhu.
+- Menggabungkan berbagai modul lain.
+
+## 8. `calculation/fisika.py`
+- Konversi suhu antar satuan:
+  - Celcius, Reamur, Fahrenheit, Kelvin.
+- Menu interaktif buat pilih jenis konversi dan masukin nilai suhu.
+
+---
+
+# Cara Menjalankan
+
+1. Pastikan Python sudah terinstall di komputermu.
+2. Install library tambahan (kalau belum):
+   ```bash
+   pip install numpy pygame
