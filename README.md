@@ -1,5 +1,5 @@
 # MyPython Project
-Ini adalah kumpulan program python yang saya buat untuk belajar dan berlatih.
+Ini hanyalah kumpulan program python yang saya buat untuk belajar dan berlatih.
 
 
 Kumpulan program Python sederhana yang bisa dipakai untuk banyak hal, mulai dari kalkulator, ngatur data, animasi di terminal, sampai bikin tampilan grafis (GUI). Cocok banget buat kamu yang lagi belajar dasar-dasar pemrograman Python, matematika, fisika, dan juga penggunaan library keren kayak Tkinter, Pygame, dan NumPy.
