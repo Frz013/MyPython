@@ -126,9 +126,10 @@ Berikut fungsi masing-masing file Python:
 
 ---
 
-# Cara Menjalankan
+## Cara Menjalankan
 
 1. Pastikan Python sudah terinstall di komputermu.
 2. Install library tambahan (kalau belum):
    ```bash
    pip install numpy pygame
+
