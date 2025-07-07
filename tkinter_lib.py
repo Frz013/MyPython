@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
+
 def main():
     BG_COLOR = "#dceeff" 
     FRAME_COLOR = "#e3f2fd"
@@ -104,6 +105,31 @@ def normal_kalkulator():
 
     label_hasil = tk.Label(bottom_frame, text="Hasil:", bg=FRAME_COLOR, font=("Arial", 12, "bold"), fg=TEXT_COLOR)
     label_hasil.grid(row=4, column=0, columnspan=2, pady=5)
+
+    window.mainloop()
+
+def matrix_kalkulator():
+    BG_COLOR = "#dceeff" 
+    FRAME_COLOR = "#e3f2fd"
+    TEXT_COLOR = "#0d47a1"
+
+    window = tk.Tk()
+    window.title('Matrix Kalkulator')
+    window.geometry("450x350")
+    window.configure(bg=BG_COLOR)
+
+    top_frame = tk.Frame(window, bg=FRAME_COLOR, bd=1, relief="ridge")
+    top_frame.pack(pady=10, padx=10, fill="x")
+
+    bottom_frame = tk.Frame(window, bg=FRAME_COLOR, bd=1, relief="ridge")
+    bottom_frame.pack(pady=10, padx=10, fill="both", expand=True)
+
+    label1 = tk.Label(top_frame, text="Matrix Kalkulator", font=("Helvetica", 22, "bold"), fg=TEXT_COLOR, bg=FRAME_COLOR)
+    label1.pack(side="top", padx=10, pady=15)
+
+    tk.Label(bottom_frame, text='Masukkan Elemen Matrix A:', bg=FRAME_COLOR, font=("Arial", 10, "bold"), fg=TEXT_COLOR).grid(row=0, column=0, sticky="w", padx=15, pady=8)
+    tk.Label(bottom_frame, text='Masukkan Elemen Matrix B:', bg=FRAME_COLOR, font=("Arial", 10, "bold"), fg=TEXT_COLOR).grid(row=1, column=0, sticky="w", padx=15, pady=8)
+
 
     window.mainloop()
 
