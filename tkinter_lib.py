@@ -26,7 +26,11 @@ def main():
     judul2.grid(row=0, column=0, padx=15, pady=10)
 
     tombol1 = tk.Button(bottom_frame, text="Normal Kalkulator")
-    tombol1.grid(row=1, column=0, pady=5)
+    tombol2 = tk.Button(bottom_frame, text="Matrix Kalkulator")
+    tombol3 = tk.Button(bottom_frame, text="Temperature Kalkulator")
+    tombol1.grid(row=1, column=0, pady=5, padx=10)
+    tombol2.grid(row=1, column=1, pady=5, padx=10)
+    tombol3.grid(row=1, column=2, pady=5, padx=10)
 
 
 
