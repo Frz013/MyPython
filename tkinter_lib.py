@@ -1,4 +1,5 @@
 import tkinter as tk
+import numpy as np
 from tkinter import ttk
 
 
@@ -26,8 +27,8 @@ def main():
     judul2 = tk.Label(bottom_frame, text="Pilih jenis Kalkulator", bg=FRAME_COLOR)
     judul2.grid(row=0, column=0, padx=15, pady=10)
 
-    tombol1 = tk.Button(bottom_frame, text="Normal Kalkulator")
-    tombol2 = tk.Button(bottom_frame, text="Matrix Kalkulator")
+    tombol1 = tk.Button(bottom_frame, text="Normal Kalkulator", command=normal_kalkulator)
+    tombol2 = tk.Button(bottom_frame, text="Matrix Kalkulator", command=matrix_kalkulator)
     tombol3 = tk.Button(bottom_frame, text="Temperature Kalkulator")
     tombol1.grid(row=1, column=0, pady=5, padx=10)
     tombol2.grid(row=1, column=1, pady=5, padx=10)
@@ -129,7 +130,10 @@ def matrix_kalkulator():
 
     tk.Label(bottom_frame, text='Masukkan Elemen Matrix A:', bg=FRAME_COLOR, font=("Arial", 10, "bold"), fg=TEXT_COLOR).grid(row=0, column=0, sticky="w", padx=15, pady=8)
     tk.Label(bottom_frame, text='Masukkan Elemen Matrix B:', bg=FRAME_COLOR, font=("Arial", 10, "bold"), fg=TEXT_COLOR).grid(row=1, column=0, sticky="w", padx=15, pady=8)
-
+    input1 = tk.Entry(bottom_frame, width=25, bg="white", fg="black", relief="flat", highlightthickness=1, highlightbackground="#90caf9")
+    input2 = tk.Entry(bottom_frame, width=25, bg="white", fg="black", relief="flat", highlightthickness=1, highlightbackground="#90caf9")
+    input1.grid(row=0, column=1, padx=15, pady=8)
+    input2.grid(row=1, column=1, padx=15, pady=8)
 
     window.mainloop()
 
