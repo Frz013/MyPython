@@ -1,8 +1,6 @@
 # MyPython Project
-Ini hanyalah sekumpulan program python yang saya buat untuk belajar dan berlatih.
 
-
-Kumpulan program Python sederhana yang bisa dipakai untuk banyak hal, mulai dari kalkulator, ngatur data, animasi di terminal, sampai bikin tampilan grafis (GUI). Cocok banget buat kamu yang lagi belajar dasar-dasar pemrograman Python, matematika, fisika, dan juga penggunaan library keren kayak Tkinter, Pygame, dan NumPy.
+Ini adalah kumpulan program Python yang saya buat untuk belajar dan latihan. Di dalamnya ada berbagai contoh aplikasi mulai dari kalkulator matematika, pengelolaan data, animasi terminal, hingga tampilan grafis (GUI) dengan Tkinter dan Pygame. Cocok untuk pemula yang ingin memahami dasar-dasar pemrograman Python, matematika, fisika, serta penggunaan library populer seperti Tkinter, Pygame, dan NumPy.
 
 ---
 
@@ -18,14 +16,14 @@ Kumpulan program Python sederhana yang bisa dipakai untuk banyak hal, mulai dari
 
 # Matrix Calculator
 
-Matrix Calculator ini program sederhana yang bisa bantu kamu ngerjain operasi-operasi dasar pada matriks. Misalnya nambah, kurang, kali, transpose, nyari determinan, sampai invers. Semuanya dibantu pakai library NumPy biar gampang.
+Matrix Calculator adalah program sederhana untuk melakukan operasi dasar pada matriks menggunakan NumPy. Fitur yang tersedia:
 
-## Fitur
+### Fitur
 
-1. **Pilih Ukuran Matriks**:
-   - Bisa pilih matriks 2x2 atau 3x3.
+1. **Pilih Ukuran Matriks**
+   - Bisa memilih matriks 2x2 atau 3x3.
 
-2. **Operasi yang Bisa Dilakukan**:
+2. **Operasi Matriks**
    - Penjumlahan
    - Pengurangan
    - Perkalian
@@ -33,103 +31,127 @@ Matrix Calculator ini program sederhana yang bisa bantu kamu ngerjain operasi-op
    - Determinan
    - Invers
 
-3. **Input Data**:
-   - Kamu bakal diminta masukin elemen-elemen matriks A (dan B kalau perlu).
+3. **Input Data**
+   - Pengguna diminta memasukkan elemen-elemen matriks A (dan B jika diperlukan) dalam satu baris, dipisah spasi.
 
-4. **Output**:
-   - Program bakal nampilin matriks A, B (kalau ada), dan hasil operasinya.
+4. **Output**
+   - Program menampilkan matriks A, B (jika ada), dan hasil operasinya.
 
-## Cara Pakai
+### Cara Pakai
 
-1. Jalankan programnya.
+1. Jalankan program matrix calculator.
 2. Pilih ukuran matriks (2x2 atau 3x3).
-3. Pilih jenis operasi (dari 1 sampai 6).
-4. Masukkan elemen-elemen matriks A.
-5. Kalau operasinya perlu dua matriks (kayak tambah, kurang, kali), masukin juga matriks B.
-6. Lihat hasilnya di layar.
+3. Pilih jenis operasi (1-6).
+4. Masukkan elemen-elemen matriks A (dan B jika perlu), misal: `1 2 3 4` untuk 2x2.
+5. Hasil operasi akan ditampilkan di layar.
 
 ---
 
 # Falling Text
 
-## Apa Itu Falling Text?
-
-Ini adalah animasi teks di terminal. Jadi kalimat **"HELLO, WORLD"** muncul satu-satu hurufnya dari atas ke bawah, kayak jatuh gitu. Setiap huruf ditebak acak sampai cocok, baru lanjut ke huruf berikutnya.
+Animasi teks di terminal, di mana kalimat **"HELLO, WORLD"** muncul satu per satu dari atas ke bawah, seperti efek jatuh. Setiap huruf ditebak secara acak sampai cocok, lalu lanjut ke huruf berikutnya.
 
 ### Penjelasan
 
-1. **Import Library**:
-   - `string`: buat dapetin daftar huruf.
-   - `random`: buat milih huruf acak.
-   - `time`: buat kasih jeda biar animasinya keliatan.
-   - `os`: buat ngebersihin layar terminal.
+1. **Import Library**
+   - `string`, `random`, `time`, `os` untuk kebutuhan animasi dan manipulasi terminal.
 
-2. **Bersihin Layar**:
-   - Supaya animasinya keliatan rapi.
+2. **Bersihkan Layar**
+   - Agar animasi terlihat rapi.
 
-3. **Set Kalimat yang Ditampilkan**:
-   - Kalimat yang mau ditampilkan: "HELLO, WORLD".
-   - Disiapin juga daftar huruf-huruf valid dan acak buat animasinya.
+3. **Set Kalimat**
+   - Kalimat yang akan dianimasikan: "HELLO, WORLD".
 
-4. **Proses Animasinya**:
-   - Setiap huruf ditebak satu-satu secara acak sampai ketemu yang benar.
-   - Tiap percobaan ditampilkan satu baris di terminal.
-   - Huruf yang udah cocok ditambahin ke hasil.
+4. **Proses Animasi**
+   - Setiap huruf ditebak acak sampai benar, lalu ditampilkan satu per satu.
 
-5. **Tampilan di Terminal**:
-   - Huruf-huruf muncul satu-satu dari atas ke bawah, kelihatan kayak efek jatuh.
+5. **Tampilan**
+   - Huruf-huruf muncul dari atas ke bawah, menciptakan efek jatuh.
 
 ---
 
 # Penjelasan Tiap File
 
-Berikut fungsi masing-masing file Python:
+Berikut penjelasan fungsi setiap file Python di proyek ini:
 
 ## 1. `math_module.py`
-- Operasi matematika: tambah, kurang, kali, bagi.
+- Berisi fungsi operasi matematika dasar: tambah, kurang, kali, bagi.
 - Fungsi faktorial (rekursif).
-- Fungsi pangkat dan modulus pakai lambda.
+- Fungsi pangkat dan modulus menggunakan lambda.
+- Semua fungsi menerima argumen dinamis.
 
 ## 2. `dictionary.py`
-- Input data mahasiswa: nama, NIM, SKS, tanggal lahir.
+- Program untuk mengelola data mahasiswa.
+- Input: nama, NIM, SKS lulus, tanggal lahir.
 - Data disimpan dalam dictionary dengan key acak.
-- Output dalam bentuk tabel.
+- Menampilkan data mahasiswa dalam bentuk tabel setiap kali data baru ditambahkan.
 
 ## 3. `trianggle.py`
-- Nampilin pola segitiga bintang:
+- Menampilkan berbagai pola segitiga bintang di terminal:
   - Segitiga naik, turun, piramida, dan piramida terbalik.
-- Jumlah baris ditentukan user.
+- Jumlah baris ditentukan oleh input user.
 
 ## 4. `datetime_lib.py`
-- Tampilkan tanggal dan waktu sekarang.
-- Jam diupdate tiap detik di terminal.
+- Menampilkan hari, tanggal, bulan, dan tahun saat ini.
+- Menampilkan jam yang terus diperbarui setiap detik di terminal.
 
 ## 5. `pygame_lib.py`
-- Contoh pakai Pygame.
-- Bikin jendela grafis 500x500 piksel.
-- Kotak biru bisa digerakin pakai tombol panah.
+- Contoh penggunaan library Pygame.
+- Membuat jendela grafis 500x500 piksel.
+- Kotak biru yang dapat digerakkan dengan tombol panah pada keyboard.
 
 ## 6. `tkinter_lib.py`
-- GUI sederhana pakai Tkinter.
-- Ada tombol buat buka kalkulator.
-- Kalkulator bisa tambah, kurang, kali, dan bagi.
+- GUI sederhana menggunakan Tkinter.
+- Menu utama dengan tombol untuk membuka kalkulator normal, kalkulator matriks, dan kalkulator suhu.
+- Kalkulator normal: operasi tambah, kurang, kali, bagi.
+- Kalkulator matriks: operasi matriks 2x2 dan 3x3 (penjumlahan, pengurangan, perkalian, transpose, determinan, invers).
+- Kalkulator suhu: (fitur dapat dikembangkan) untuk konversi suhu antar satuan.
 
 ## 7. `import.py`
-- Program utama.
-- Menyediakan menu untuk kalkulasi umum, matriks, dan konversi suhu.
-- Menggabungkan berbagai modul lain.
+- Program utama berbasis terminal.
+- Menyediakan menu untuk kalkulasi matematika dasar, operasi matriks, dan konversi suhu.
+- Menggabungkan berbagai modul lain (`math_module`, `mtx`, `fisika`).
 
 ## 8. `calculation/fisika.py`
-- Konversi suhu antar satuan:
+- Berisi fungsi konversi suhu antar satuan:
   - Celcius, Reamur, Fahrenheit, Kelvin.
-- Menu interaktif buat pilih jenis konversi dan masukin nilai suhu.
+- Menu interaktif untuk memilih jenis konversi dan memasukkan nilai suhu.
 
 ---
 
 ## Cara Menjalankan
 
-1. Pastikan Python sudah terinstall di komputermu.
-2. Install library tambahan (kalau belum):
+1. Pastikan Python 3 sudah terinstall di komputer.
+2. Install library tambahan jika diperlukan:
    ```bash
    pip install numpy pygame
+   ```
+3. Jalankan file yang diinginkan:
+   - Untuk kalkulator utama (terminal):  
+     ```bash
+     python import.py
+     ```
+   - Untuk GUI kalkulator:  
+     ```bash
+     python tkinter_lib.py
+     ```
+   - Untuk animasi terminal:  
+     Jalankan script animasi yang diinginkan.
+   - Untuk eksperimen lain, jalankan file terkait sesuai kebutuhan.
+
+---
+
+## Kebutuhan Sistem & Library
+
+- Python 3.x
+- [NumPy](https://numpy.org/) (untuk operasi matriks)
+- [Pygame](https://www.pygame.org/) (untuk grafis sederhana)
+- [Tkinter](https://wiki.python.org/moin/TkInter) (biasanya sudah ada di Python)
+- OS: Windows (beberapa script menggunakan `os.system('cls')`)
+
+---
+
+**Catatan:**  
+Setiap file dapat dijalankan secara terpisah untuk belajar konsep tertentu, atau digunakan bersama melalui file utama (`import.py`).  
+Silakan modifikasi dan kembangkan sesuai kebutuhan belajar masing-masing.
 
