@@ -241,7 +241,7 @@ def temperature_kalkulator():
     label1 = tk.Label(top_frame, text="Temperature Kalkulator", font=("Helvetica", 22, "bold"), fg=TEXT_COLOR, bg=FRAME_COLOR)
     label1.pack(side="top", padx=10, pady=15)
 
-    # Add temperature conversion logic here
+    
 
     window.mainloop()
 
