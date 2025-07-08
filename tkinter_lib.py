@@ -1,6 +1,7 @@
 import tkinter as tk
 import numpy as np
 from tkinter import ttk
+from calculation import mtx
 
 
 def main():
@@ -135,17 +136,76 @@ def matrix_kalkulator():
     input1.grid(row=0, column=1, padx=15, pady=8)
     input2.grid(row=1, column=1, padx=15, pady=8)
 
-    def operasi_matrix(event="none"):
-        try:
-            matrix_a = np.array(eval(input1.get()))
-            matrix_b = np.array(eval(input2.get()))
-        except Exception as e:
-            label_hasil.config(text="Error: " + str(e))
+    def operasi_matrix():
+        bentuk_matrix = shape.get()
+        operasi_terpilih = operasi.get()
+
+        
+        if bentuk_matrix == "2x2":
+            x, y = 2, 2
+            total = 4
+        elif bentuk_matrix == "3x3":
+            x, y = 3, 3
+            total = 9
+        else:
+            label_hasil.config(text="Pilih ukuran matriks!")
             return
 
-    operasi = ttk.Combobox(bottom_frame, state="readonly", value=["Penjumlahan", "Pengurangan", "Perkalian", "Pembagian"])
+        
+        try:
+            valuesA = list(map(int, input1.get().split()))
+            if len(valuesA) != total:
+                label_hasil.config(text=f"Matrix A harus {total} angka")
+                return
+            matrixA = np.array(valuesA).reshape(x, y)
+        except Exception:
+            label_hasil.config(text="Input Matrix A tidak valid")
+            return
+
+        
+        if operasi_terpilih in ["Penjumlahan", "Pengurangan", "Perkalian"]:
+            try:
+                valuesB = list(map(int, input2.get().split()))
+                if len(valuesB) != total:
+                    label_hasil.config(text=f"Matrix B harus {total} angka")
+                    return
+                matrixB = np.array(valuesB).reshape(x, y)
+            except Exception:
+                label_hasil.config(text="Input Matrix B tidak valid")
+                return
+        else:
+            matrixB = None
+
+        # Proses operasi
+        try:
+            if operasi_terpilih == "Penjumlahan":
+                hasil = matrixA + matrixB
+            elif operasi_terpilih == "Pengurangan":
+                hasil = matrixA - matrixB
+            elif operasi_terpilih == "Perkalian":
+                hasil = np.dot(matrixA, matrixB)
+            elif operasi_terpilih == "Transpose":
+                hasil = matrixA.T
+            elif operasi_terpilih == "Determinan":
+                hasil = np.linalg.det(matrixA)
+            elif operasi_terpilih == "Invers":
+                hasil = np.linalg.inv(matrixA)
+            else:
+                hasil = "Pilih operasi!"
+        except Exception as e:
+            label_hasil.config(text=f"Error: {e}")
+            return
+
+        label_hasil.config(text=f"Hasil:\n{hasil}")
+
+
+    operasi = ttk.Combobox(bottom_frame, state="readonly", value=["Penjumlahan", "Pengurangan", "Perkalian", "Transpose", "Determinan", "Invers"])
     operasi.grid(row=2, column=1, padx=10, pady=10)
     operasi.set("Pilihan Operasi")
+
+    shape = ttk.Combobox(bottom_frame, state="readonly", value=["2x2", "3x3"])
+    shape.grid(row=2, column=0, padx=10, pady=10)
+    shape.set("Pilih Ukuran Matrix")
 
 
     style = ttk.Style()
