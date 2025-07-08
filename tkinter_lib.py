@@ -29,7 +29,7 @@ def main():
 
     tombol1 = tk.Button(bottom_frame, text="Normal Kalkulator", command=normal_kalkulator)
     tombol2 = tk.Button(bottom_frame, text="Matrix Kalkulator", command=matrix_kalkulator)
-    tombol3 = tk.Button(bottom_frame, text="Temperature Kalkulator")
+    tombol3 = tk.Button(bottom_frame, text="Temperature Kalkulator", command=temperature_kalkulator)
     tombol1.grid(row=1, column=0, pady=5, padx=10)
     tombol2.grid(row=1, column=1, pady=5, padx=10)
     tombol3.grid(row=1, column=2, pady=5, padx=10)
@@ -134,6 +134,54 @@ def matrix_kalkulator():
     input2 = tk.Entry(bottom_frame, width=25, bg="white", fg="black", relief="flat", highlightthickness=1, highlightbackground="#90caf9")
     input1.grid(row=0, column=1, padx=15, pady=8)
     input2.grid(row=1, column=1, padx=15, pady=8)
+
+    def operasi_matrix(event="none"):
+        try:
+            matrix_a = np.array(eval(input1.get()))
+            matrix_b = np.array(eval(input2.get()))
+        except Exception as e:
+            label_hasil.config(text="Error: " + str(e))
+            return
+
+    operasi = ttk.Combobox(bottom_frame, state="readonly", value=["Penjumlahan", "Pengurangan", "Perkalian", "Pembagian"])
+    operasi.grid(row=2, column=1, padx=10, pady=10)
+    operasi.set("Pilihan Operasi")
+
+
+    style = ttk.Style()
+    style.theme_use('clam')
+    style.configure("TCombobox", fieldbackground="white", background="#bbdefb", foreground="black")
+
+    button = tk.Button(bottom_frame, text='Hitung', width=30, bg="#64b5f6", fg="white", font=("Arial", 10, "bold"),
+                    relief="flat", activebackground="#42a5f5", command=operasi_matrix)
+    button.grid(row=3, column=0, columnspan=2, pady=15)
+
+    label_hasil = tk.Label(bottom_frame, text="Hasil:", bg=FRAME_COLOR, font=("Arial", 12, "bold"), fg=TEXT_COLOR)
+    label_hasil.grid(row=4, column=0, columnspan=2, pady=5)
+
+
+    window.mainloop()
+
+def temperature_kalkulator():
+    BG_COLOR = "#dceeff" 
+    FRAME_COLOR = "#e3f2fd"
+    TEXT_COLOR = "#0d47a1"
+
+    window = tk.Tk()
+    window.title('Temperature Kalkulator')
+    window.geometry("450x350")
+    window.configure(bg=BG_COLOR)
+
+    top_frame = tk.Frame(window, bg=FRAME_COLOR, bd=1, relief="ridge")
+    top_frame.pack(pady=10, padx=10, fill="x")
+
+    bottom_frame = tk.Frame(window, bg=FRAME_COLOR, bd=1, relief="ridge")
+    bottom_frame.pack(pady=10, padx=10, fill="both", expand=True)
+
+    label1 = tk.Label(top_frame, text="Temperature Kalkulator", font=("Helvetica", 22, "bold"), fg=TEXT_COLOR, bg=FRAME_COLOR)
+    label1.pack(side="top", padx=10, pady=15)
+
+    # Add temperature conversion logic here
 
     window.mainloop()
 
