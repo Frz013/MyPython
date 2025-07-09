@@ -241,6 +241,66 @@ def temperature_kalkulator():
     label1 = tk.Label(top_frame, text="Temperature Kalkulator", font=("Helvetica", 22, "bold"), fg=TEXT_COLOR, bg=FRAME_COLOR)
     label1.pack(side="top", padx=10, pady=15)
 
+    tk.Label(bottom_frame, text='Masukan nilai temperature:', bg=FRAME_COLOR, font=("Arial", 10, "bold"), fg=TEXT_COLOR).grid(row=0, column=0, sticky="w", padx=15, pady=8)
+    tk.Label(bottom_frame, text='Jenis konversi temperature:', bg=FRAME_COLOR, font=("Arial", 10, "bold"), fg=TEXT_COLOR).grid(row=1, column=0, sticky="w", padx=15, pady=8)
+    input1 = tk.Entry(bottom_frame, width=25, bg="white", fg="black", relief="flat", highlightthickness=1, highlightbackground="#90caf9")
+    input1.grid(row=0, column=1, padx=15, pady=8)
+
+
+    def konversi_suhu():
+        try:
+            suhu = float(input1.get())
+        except ValueError:
+            label_hasil.config(text="Error: Input harus angka!")
+            return
+
+        operasi_terpilih = operasi.get()
+        if operasi_terpilih == " 1. Celcius ke Reamur":
+            hasil = (4/5) * suhu
+        elif operasi_terpilih == " 2. Celcius ke Fahrenheit":
+            hasil = (9/5) * suhu + 32
+        elif operasi_terpilih == " 3. Celcius ke Kelvin":
+            hasil = suhu + 273.15
+        elif operasi_terpilih == " 4. Reamur ke Celcius":
+            hasil = (5/4) * suhu
+        elif operasi_terpilih == " 5. Reamur ke Fahrenheit":
+            hasil = (9/4) * suhu + 32
+        elif operasi_terpilih == " 6. Reamur ke Kelvin":
+            hasil = (5/4) * suhu + 273.15
+        elif operasi_terpilih == " 7. Kelvin ke Celcius":
+            hasil = suhu - 273.15
+        elif operasi_terpilih == " 8. Kelvin ke Reamur":
+            hasil = (4/5) * (suhu - 273.15)
+        elif operasi_terpilih == " 9. Kelvin ke Fahrenheit":
+            hasil = (9/5) * (suhu - 273.15) + 32
+        elif operasi_terpilih == "10. Fahrenheit ke Celcius":
+            hasil = (5/9) * (suhu - 32)
+        elif operasi_terpilih == "11. Fahrenheit ke Reamur":
+            hasil = (4/9) * (suhu - 32)
+        elif operasi_terpilih == "12. Fahrenheit ke Kelvin":
+            hasil = (5/9) * (suhu - 32) + 273.15
+        else:
+            hasil = "Pilih Operasi terlebih dahulu"
+
+        label_hasil.config(text="Hasil: " + str(hasil))
+
+    
+    operasi = ttk.Combobox(bottom_frame, state="readonly", value=[" 1. Celcius ke Reamur", " 2. Celcius ke Fahrenheit", " 3. Celcius ke Kelvin", " 4. Reamur ke Celcius", " 5. Reamur ke Fahrenheit", " 6. Reamur ke Kelvin", " 7. Kelvin ke Celcius", " 8. Kelvin ke Reamur", " 9. Kelvin ke Fahrenheit", " 10. Fahrenheit ke Celcius", " 11. Fahrenheit ke Reamur", " 12. Fahrenheit ke Kelvin"])
+
+    operasi.grid(row=1, column=1, padx=10, pady=10)
+    operasi.set("Pilihan Konversi")
+
+    style = ttk.Style()
+    style.theme_use('clam')
+    style.configure("TCombobox", fieldbackground="white", background="#bbdefb", foreground="black")
+
+    button = tk.Button(bottom_frame, text='Hitung', width=30, bg="#64b5f6", fg="white", font=("Arial", 10, "bold"),
+                    relief="flat", activebackground="#42a5f5", command=konversi_suhu)
+    button.grid(row=3, column=0, columnspan=2, pady=15)
+
+    label_hasil = tk.Label(bottom_frame, text="Hasil:", bg=FRAME_COLOR, font=("Arial", 12, "bold"), fg=TEXT_COLOR)
+    label_hasil.grid(row=4, column=0, columnspan=2, pady=5)
+
     
 
     window.mainloop()
