@@ -111,6 +111,7 @@ def normal_kalkulator():
                     relief="flat", activebackground="#42a5f5", command=operasi_hitung)
     button.grid(row=3, column=0, columnspan=2, pady=15)
 
+    # Label untuk menampilkan hasil
     label_hasil = tk.Label(bottom_frame, text="Hasil:", bg=FRAME_COLOR, font=("Arial", 12, "bold"), fg=TEXT_COLOR)
     label_hasil.grid(row=4, column=0, columnspan=2, pady=5)
 
@@ -227,6 +228,7 @@ def matrix_kalkulator():
                     relief="flat", activebackground="#42a5f5", command=operasi_matrix)
     button.grid(row=3, column=0, columnspan=2, pady=15)
 
+    # label untuk menampilkan hasil
     label_hasil = tk.Label(bottom_frame, text="Hasil:", bg=FRAME_COLOR, font=("Arial", 12, "bold"), fg=TEXT_COLOR)
     label_hasil.grid(row=4, column=0, columnspan=2, pady=5)
 
