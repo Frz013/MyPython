@@ -187,7 +187,7 @@ def matrix_kalkulator():
         else:
             matrixB = None
 
-        # Proses operasi
+        # Proses operasi matrix
         try:
             if operasi_terpilih == "Penjumlahan":
                 hasil = matrixA + matrixB
