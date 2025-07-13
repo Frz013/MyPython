@@ -1,4 +1,6 @@
-file = open('data.txt', 'r')
+file = open('text.txt', 'r')
 
-file.read()
+print(file.readline(), end="")
+print(file.readlines())
+
 
