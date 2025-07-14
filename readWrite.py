@@ -10,3 +10,7 @@ with open("text.txt", "r") as file:
     print(isi)
     print(file.closed)
 print(file.closed)
+
+with open("data.txt", "w", encoding="utf-8") as file2:
+    file2.write("Hello World1\n")
+    file2.write("Hello World2\n")
