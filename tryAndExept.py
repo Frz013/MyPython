@@ -21,3 +21,4 @@ while(True):
             break
     except:
         print("tidak bisa membagi dengan nol")
+print("Akhir dari program")
