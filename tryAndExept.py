@@ -21,4 +21,5 @@ while(True):
             break
     except ZeroDivisionError:
         print("tidak bisa membagi dengan nol")
-print("Akhir dari program")
+    except ValueError:
+        print("input tidak valid")
