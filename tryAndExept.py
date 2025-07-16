@@ -19,6 +19,6 @@ while(True):
         isLanjut = input("apakah ingin lanjut? (Y/n)")
         if isLanjut == "n":
             break
-    except:
+    except ZeroDivisionError:
         print("tidak bisa membagi dengan nol")
 print("Akhir dari program")
