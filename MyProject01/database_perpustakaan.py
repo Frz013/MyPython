@@ -24,7 +24,6 @@ if __name__ == "__main__":
         print("\n","="*47,"\n")
 
         try:
-            pilihan_user = int(input("Pilih menu (1-4): "))
             match pilihan_user:
                 case 1: print("READ DATA")
                 case 2: print("ADD DATA")
