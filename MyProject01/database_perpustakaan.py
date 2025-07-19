@@ -14,9 +14,28 @@ if __name__ == "__main__":
         print("SELAMAT DATANG DI PROGRAM DATABASE PERPUSTAKAAN")
         print("="*47)
 
-        print("1. READ")
+        print("1. READ DATA")
         print("2. ADD DATA")
         print("3. UPDATE DATA")
         print("4. REMOVE DATA\n")
 
         pilihan_user = int(input("MASUKAN PILIHAN OPSI: "))
+
+        print("\n","="*47,"\n")
+
+        try:
+            pilihan_user = int(input("Pilih menu (1-4): "))
+            match pilihan_user:
+                case 1: print("READ DATA")
+                case 2: print("ADD DATA")
+                case 3: print("UPDATE DATA")
+                case 4: print("REMOVE DATA")
+                case _: print("INPUT TIDAK VALID, PILIH 1-4!")
+        except ValueError:
+            print("HARUS ANGKA!")
+
+        print("\n","="*47,"\n")
+
+        isCon = input("apakah ingin lanjut? (y/n)")
+        if isCon == "n" or isCon == "N":
+            break
