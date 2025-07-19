@@ -5,6 +5,15 @@ import CRUD as CRUD
 if __name__ == "__main__":
     sistem_operasi = os.name
 
+    match sistem_operasi:
+        case "posix": os.system("clear")
+        case "nt": os.system("cls")
+    
+    print("SELAMAT DATANG DI PROGRAM DATABASE PERPUSTAKAAN")
+    print("="*47)
+
+    CRUD.init_console()
+
     while(True):
         match sistem_operasi:
             case "posix": os.system("clear")
