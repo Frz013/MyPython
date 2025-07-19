@@ -1,3 +1,4 @@
+from .operasi import create_data
 
 DB_FILE = "data.txt"
 TEMPLATE = {
@@ -15,5 +16,5 @@ def init_console():
 
     except:
         print("Database tidak tersedia, silahkan buat data baru: ")
-        with open(DB_FILE, "w", encoding="utf-8") as file:
+        create_data()
             

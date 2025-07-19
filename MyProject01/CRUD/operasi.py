@@ -10,5 +10,11 @@ def create_data():
 
     data = database.TEMPLATE.copy()
 
-    data["pk"] = random_str()
-    data["date_add"] = time.
+    data["pk"] = random_str(6)
+    data["date_add"] = time.strftime("%Y-%m-%d-%H:%M:%S%z", time.gmtime())
+    data["penulis"] = penulis
+    data["judul"] = judul
+    data["tahun"] = tahun
+
+    print(data["date_add"])
+    input("pause")
