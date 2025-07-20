@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
         try:
             match pilihan_user:
-                case 1: print("READ DATA")
+                case 1: CRUD.read_console()
                 case 2: print("ADD DATA")
                 case 3: print("UPDATE DATA")
                 case 4: print("REMOVE DATA")

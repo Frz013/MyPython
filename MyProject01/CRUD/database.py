@@ -13,6 +13,7 @@ def init_console():
     try:
         with open(DB_FILE,"r") as file:
             print("Database tersedia")
+            isi = file.read()
 
     except:
         print("Database tidak tersedia, silahkan buat data baru: ")

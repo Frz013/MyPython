@@ -23,5 +23,13 @@ def create_data():
             file.write(data_str)
     except:
         print("eror")
-    print(data_str)
-    input("pause")
+
+def read():
+
+    try:
+        with open(database.DB_FILE, "r") as file:
+            isi = file.readlines()
+            return isi
+    except:
+        print("terjadi kesalahan")
+        return False
