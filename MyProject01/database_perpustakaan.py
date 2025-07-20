@@ -30,7 +30,6 @@ if __name__ == "__main__":
 
         pilihan_user = int(input("MASUKAN PILIHAN OPSI: "))
 
-        print("\n","="*47,"\n")
 
         try:
             match pilihan_user:
@@ -42,7 +41,6 @@ if __name__ == "__main__":
         except ValueError:
             print("HARUS ANGKA!")
 
-        print("\n","="*47,"\n")
 
         isCon = input("apakah ingin lanjut? (y/n)")
         if isCon == "n" or isCon == "N":

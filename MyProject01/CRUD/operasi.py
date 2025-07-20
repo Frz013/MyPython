@@ -16,7 +16,7 @@ def create_data():
     data["judul"] = judul + database.TEMPLATE["judul"][len(judul):]
     data["tahun"] = tahun
 
-    data_str = f" {data['pk']} | {data['date_add']} | {data['penulis']} | {data['judul']} | {data['tahun']}\n"
+    data_str = f" {data['pk']}, {data['date_add']}, {data['penulis']}, {data['judul']}, {data['tahun']}\n"
 
     try:
         with open(database.DB_FILE, "w", encoding="utf-8") as file:
