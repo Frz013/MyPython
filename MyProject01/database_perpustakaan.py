@@ -34,7 +34,7 @@ if __name__ == "__main__":
         try:
             match pilihan_user:
                 case 1: CRUD.read_console()
-                case 2: print("ADD DATA")
+                case 2: CRUD.create_console()
                 case 3: print("UPDATE DATA")
                 case 4: print("REMOVE DATA")
                 case _: print("INPUT TIDAK VALID, PILIH 1-4!")

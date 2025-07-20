@@ -1,4 +1,4 @@
-from .operasi import create_data
+from .operasi import create_first_data
 
 DB_FILE = "data.txt"
 TEMPLATE = {
@@ -17,5 +17,5 @@ def init_console():
 
     except:
         print("Database tidak tersedia, silahkan buat data baru: ")
-        create_data()
+        create_first_data()
             

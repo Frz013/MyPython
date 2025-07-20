@@ -1,11 +1,29 @@
 from . import operasi
 
+def create_console():
+    print("\n\n" + "="*100)
+    print("Silahkan tambahkan data buku")
+
+    penulis = input("Penulis:\t")
+    judul = input("Judul:\t")
+    while True:
+        tahun = input("Tahun: \t")
+        try:
+            if len(str(tahun)) == 4:
+                break
+            else:
+                print("Masukan 4 digit angka (YYYY)")
+        except:
+            print("Masukan 4 digit angka (YYYY)")
+
+    operasi.create_data(penulis,judul,tahun)
+
 def read_console():
     isi_data = operasi.read()
     index = "No"
     penulis = "Penulis"
     judul = "Judul"
-    tahun = "Tahun"
+    tahun = "tahun"
 
     #Header
     print("="*100 +"\n")

@@ -2,11 +2,38 @@ from . import database
 from .utility import random_str
 import time
 
+def create_data(penulis,judul,tahun):
+    data = database.TEMPLATE.copy()
 
-def create_data():
+    data["pk"] = random_str(6)
+    data["date_add"] = time.strftime("%Y-%m-%d-%H:%M:%S%z", time.gmtime())
+    data["penulis"] = penulis + database.TEMPLATE["penulis"][len(penulis):]
+    data["judul"] = judul + database.TEMPLATE["judul"][len(judul):]
+    data["tahun"] = tahun
+
+    data_str = f" {data['pk']}, {data['date_add']}, {data['penulis']}, {data['judul']}, {data['tahun']}\n"
+
+    try:
+        with open(database.DB_FILE, "a", encoding="utf-8") as file:
+            file.write(data_str)
+    except:
+        print("eror")
+
+def create_first_data():
     penulis = input("Penulis: ")
     judul = input("Judul Buku: ")
-    tahun = input("Tahun terbit: ")
+
+    while True:
+        tahun = input("Tahun terbit: ")
+        try:
+            if len(str(tahun)) == 4:
+                break
+            else:
+                print("Masukan 4 digit angka (YYYY)")
+        except:
+            print("Masukan 4 digit angka (YYYY)")
+
+        
 
     data = database.TEMPLATE.copy()
 
