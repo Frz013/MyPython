@@ -1,30 +1,6 @@
 from . import operasi
 import os
 
-def create_console():
-    print("\n\n" + "="*100)
-    print("Silahkan tambahkan data buku")
-
-    penulis = input("Penulis:\t")
-    judul = input("Judul:\t")
-    while True:
-        tahun = input("Tahun: \t")
-        try:
-            if len(str(tahun)) == 4:
-                break
-            else:
-                print("Masukan 4 digit angka (YYYY)")
-        except:
-            print("Masukan 4 digit angka (YYYY)")
-
-    sistem_operasi = os.name
-    match sistem_operasi:
-        case "posix": os.system("clear")
-        case "nt": os.system("cls")
-
-    operasi.create_data(penulis,judul,tahun)
-    print("Data buku berhasil ditambahkan")
-    read_console()
 
 def read_console():
     isi_data = operasi.read()
@@ -52,3 +28,28 @@ def read_console():
     
     #Footer
     print("\n"+ "="*100)
+
+def create_console():
+    print("\n\n" + "="*100)
+    print("Silahkan tambahkan data buku")
+
+    penulis = input("Penulis:\t")
+    judul = input("Judul:\t")
+    while True:
+        tahun = input("Tahun: \t")
+        try:
+            if len(str(tahun)) == 4:
+                break
+            else:
+                print("Masukan 4 digit angka (YYYY)")
+        except:
+            print("Masukan 4 digit angka (YYYY)")
+
+    sistem_operasi = os.name
+    match sistem_operasi:
+        case "posix": os.system("clear")
+        case "nt": os.system("cls")
+
+    operasi.create_data(penulis,judul,tahun)
+    print("Data buku berhasil ditambahkan")
+    read_console()
