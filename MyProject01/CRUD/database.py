@@ -4,8 +4,8 @@ DB_FILE = "data.txt"
 TEMPLATE = {
     "pk" : "XXXXXX",
     "date_add" : "DD-MM_YYYY",
-    "judul" : " "*255,
-    "penulis" : " "*255,
+    "judul" : " "*90,
+    "penulis" : " "*90,
     "tahun" : "YYYY",
 }
 def init_console():

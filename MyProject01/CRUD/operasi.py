@@ -12,9 +12,11 @@ def create_data():
 
     data["pk"] = random_str(6)
     data["date_add"] = time.strftime("%Y-%m-%d-%H:%M:%S%z", time.gmtime())
-    data["penulis"] = penulis
-    data["judul"] = judul
+    data["penulis"] = penulis + database.TEMPLATE["penulis"][len(penulis):]
+    data["judul"] = judul + database.TEMPLATE["judul"][len(judul):]
     data["tahun"] = tahun
 
-    print(data["date_add"])
+    data_str = f" {data['pk']} | {data['date_add']} | {data['penulis']} | {data['judul']} | {data['tahun']}"
+
+    print(data_str)
     input("pause")
