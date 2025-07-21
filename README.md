@@ -1,4 +1,4 @@
-# MyPython Project
+<!-- # MyPython Project
 
 Ini adalah kumpulan program Python yang saya buat untuk belajar dan latihan. Di dalamnya ada berbagai contoh aplikasi mulai dari kalkulator matematika, pengelolaan data, animasi terminal, hingga tampilan grafis (GUI) dengan Tkinter dan Pygame. Cocok untuk pemula yang ingin memahami dasar-dasar pemrograman Python, matematika, fisika, serta penggunaan library populer seperti Tkinter, Pygame, dan NumPy.
 
@@ -154,4 +154,4 @@ Berikut penjelasan fungsi setiap file Python di proyek ini:
 **Catatan:**  
 Setiap file dapat dijalankan secara terpisah untuk belajar konsep tertentu, atau digunakan bersama melalui file utama (`import.py`).  
 Silakan modifikasi dan kembangkan sesuai kebutuhan belajar masing-masing.
-
+ -->
