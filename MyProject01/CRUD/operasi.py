@@ -51,11 +51,18 @@ def create_first_data():
     except:
         print("eror")
 
-def read():
+def read(**kwargs):
+
 
     try:
         with open(database.DB_FILE, "r") as file:
             isi = file.readlines()
+            jumlah_buku = len(isi)
+            print(jumlah_buku)
+
+            if "index" in kwargs:
+                print(isi[kwargs["index"]-1])
+
             return isi
     except:
         print("terjadi kesalahan")

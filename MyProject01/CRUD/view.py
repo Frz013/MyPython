@@ -53,3 +53,11 @@ def create_console():
     operasi.create_data(penulis,judul,tahun)
     print("Data buku berhasil ditambahkan")
     read_console()
+
+
+def update_console():
+    read_console()
+
+    nomor_buku = int(input("Pilih nomor buku yang ingin di update: "))
+
+    operasi.read(index=nomor_buku)
