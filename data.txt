@@ -2,4 +2,6 @@
  GEYPtf, 2025-07-20-14:13:25+0700, Elaina                                                                                    , Wandering Witch                                                                           , 2020
  mFhexu, 2025-07-20-14:13:57+0700, Frieren                                                                                   , Frieren Jurney                                                                            , 2023
  CRNcql, 2025-07-20-14:17:35+0700, Conan                                                                                     , Detective Conan                                                                           , 1999
- aXHrKM, 2025-07-20-14:21:02+0700, Rafal                                                                                     , On the movement of the earth                                                              , 2024
+ aXHrKM, 2025-07-20-14:21:02+0700, Rafal                                                                                     , On the movement of the earth                                                              , 2024 
+ geKcbx, 2025-07-23-13:55:23+0700, Rimuru                                                                                    , Tensura                                                                                   , 2020
+ elUXEn, 2025-07-23-13:56:29+0700, Rudeus                                                                                    , moshoku tensei                                                                            , 2022
