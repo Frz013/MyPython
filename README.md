@@ -96,7 +96,7 @@ python datetime_lib.py
 python pygame_lib.py
 ```
 
-hanya untuk latihan
+### project ini hanya untuk latihan
 
 
 
