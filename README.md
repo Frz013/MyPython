@@ -96,7 +96,5 @@ python datetime_lib.py
 python pygame_lib.py
 ```
 
-### project ini hanya untuk latihan
-
 
 
